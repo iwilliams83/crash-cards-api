@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :cards
+  resources :decks
+  resources :users
+
+  namespace :api do
+    namespace :v1 do
+      #routes here
+      #get 'decks', to: 'decks#index'
+      #post 'card', to: 'cards#create'
+    end
+  end
 end
