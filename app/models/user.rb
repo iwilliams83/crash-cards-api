@@ -1,3 +1,4 @@
-class User < ApplicationRecord
-  has_many :decks
-end
+
+    class User < ApplicationRecord
+      has_many :decks
+    end
