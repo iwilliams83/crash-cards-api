@@ -4,6 +4,10 @@ module Api
       def index
         render json: Card.all
       end
+
+      def update
+        
+      end
     end
   end
 end
