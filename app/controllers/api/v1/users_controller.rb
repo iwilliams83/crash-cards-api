@@ -9,6 +9,11 @@ module Api
       def show
         id = params['id'].to_i
         user = User.find(id)
+        # puts or bye user.decks
+        # byebug
+        user.decks.each do |deck|
+          deck.cards.sort
+        end
         render json: user.decks
       end
     end
