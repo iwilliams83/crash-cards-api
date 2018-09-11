@@ -11,10 +11,15 @@ module Api
         back = params['card']['back']
         card = Card.find(id)
         card.update(front: front, back: back)
-        
-        #params = {"card"=>{"id"=>12, "front"=>"5x5", "back"=>"25", "deck_id"=>4,
-        # "created_at"=>"2018-09-04T01:36:20.258Z", "updated_at"=>"2018-09-04T01:36:20.258Z"}
       end
+
+      def destroy
+        id = params['cardId']
+        card = Card.find(id)
+        
+      end
+
+
     end
   end
 end
