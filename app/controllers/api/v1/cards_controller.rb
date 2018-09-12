@@ -5,6 +5,17 @@ module Api
         render json: Card.all
       end
 
+      def create
+        front = params['card']['front']
+        back = params['card']['back']
+        deck_id = params['deckId']
+
+        deck = Deck.find(deck_id)
+        card = Card.new(front: front, back: back)
+        card.deck = deck
+        card.save
+      end
+
       def update
         id = params['card']['id']
         front = params['card']['front']
@@ -22,7 +33,6 @@ module Api
           deck.destroy
         end
       end
-
 
     end
   end
