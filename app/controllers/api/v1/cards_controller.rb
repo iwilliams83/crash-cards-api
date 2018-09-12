@@ -16,7 +16,11 @@ module Api
       def destroy
         id = params['cardId']
         card = Card.find(id)
-        
+        deck = card.deck
+        card.destroy
+        if card.deck.cards.length == 0
+          deck.destroy
+        end
       end
 
 

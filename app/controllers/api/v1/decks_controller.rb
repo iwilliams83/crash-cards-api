@@ -20,6 +20,8 @@ module Api
           new_card.deck_id = deck.id
           new_card.save
         end
+
+        render json: deck
       end
 
     end
